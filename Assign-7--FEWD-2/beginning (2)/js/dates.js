@@ -5,6 +5,7 @@
 // Create an application that gets the number of days in a month. 
 // Display that result within the console window.
 
+
 let mth = prompt('Step 1 - name a month 1 - 12');
 let getDaysInMonth = function(month,year) {
     if(mth == 2){
@@ -14,6 +15,14 @@ let getDaysInMonth = function(month,year) {
     }
  };
   console.log(getDaysInMonth(1, 1975));
+
+
+// let m = prompt('Step 1 - enter a date');
+//     let getDayofMonth = function(m) {
+//     let daze = new Date(m);
+//         return daze.getDate();
+//  };
+// console.log(getDayofMonth(m));
 
 
 let anno = prompt("Step 1(another way) - Enter a year ", "XXXX");
@@ -33,39 +42,49 @@ let dateInput = prompt('Step 2 - enter a date');
 let date = new Date (dateInput);
 
 console.log(date);
-console.log('Month name:', date.toLocaleString('it-IT', {month: 'long'}));
+console.log("Step 2 " + 'Month name:', date.toLocaleString('it-IT', {month: 'long'}));
 
-//STEP 3
+//STEP 3 DONE 
 // Create an application that tests whether a date is a weekend. Display that result within the console window.
 
-//WHY DAY IS ALWAYS WEEKDAY??
 let isDate = prompt('Step 3 - enter a date');
 let weekend =  function(isDate){
     let data = new Date(isDate);
-     
+
     if(data.getDay() == 6 || data.getDay() == 0)
        {
         return "weekend";
         } else {
-            return "weekday";
+        return "weekday";
         }
 };
 
-console.log(isDate + " is a " + weekend());
+console.log("Step 3 " + isDate + " is a " + weekend(isDate));
 
 
-//STEP 4
+//STEP 4 DONE
 // Create an application that gets yesterday’s day of the week. For instance, if today is Tuesday, the console window should display Monday.
 
-//WHY NOT CHANGING TO DAY NOT NUMBER
 let ieri =  function(){
-    var dataIeri = new Date()-1;
-    var giorno =  dataIeri.getDay();
-        return giorno.toLocaleString("it-IT", { weekday : "long"});
+    let dataIeri = new Date();
+        dataIeri.setDate(dataIeri.getDate()-1);
+        return dataIeri.toLocaleString("default", { weekday : "long"});
 };
 
 console.log("Step 4 - yesterday's day of the week was " + ieri());
 
+//DOESNT WORK - doesnt convert number to day of week
+//due to the fact that once giorno is -1 it converts to a number (it is no longer the day of the week (1 being Monday))
+// let ieri =  function(){
+//     var dataIeri = new Date();
+//     var giorno =  dataIeri.getDay()-1;
+//     if(giorno < 0){
+//         giorno = 6;
+//     }
+//         return giorno.toLocaleString("it-IT", { weekday : "long"});
+// };
+
+// console.log("Step 4 - yesterday's day of the week was " + ieri());
 
 //STEP 5 DONE
 // Create an application that gets the current day of the week. The twist here is that I want only the first letter of the day. If today is Tuesday, the letter T should be displayed in the console window.
@@ -76,8 +95,10 @@ console.log(weekday);
 let first = weekday.slice(0,1);
 console.log("Step 5: " + first);
 
-const d = new Date();
-userDate = window.prompt("Enter a date (January 13, 2021)", d);
-let d2 = new Date(userDate);
-console.log("Step 5");
-console.log(d2.toLocaleString('default', { weekday: 'narrow' }));
+const dotw = new Date();
+userDate = prompt("Step 5(another way) enter a date", dotw);
+let dayofweek = new Date(userDate);
+console.log("Step 5: " + dayofweek.toLocaleString('default', { weekday: 'narrow' }));
+
+
+
