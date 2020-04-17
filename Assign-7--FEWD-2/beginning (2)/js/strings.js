@@ -66,15 +66,22 @@ let replace = fox6.replace("the lazy dog", yourName);
 alert("Step 6 - " + replace);
 
 //STEP 7 
+//  THE INSTRUCTIONS DO NOT MAKE SENSE 
+
 // Create an application that stores the text “The quick brown fox jumps over the lazy dog” within a variable. 
 // Then, prompt the user for a word. 
 // Next, search for the word within the string that the user enters into the prompt. 
 // Use the alert method to display the result.
-
 let fox7 = "The quick brown fox jumps over the lazy dog";
 let parola = prompt('enter a word from' + fox7);
 
-// STEP 7 - THE INSTRUCTIONS DO NOT MAKE SENSE 
+let parole = function (string) {
+    return string.trim().split(" ");
+};
+console.log(parole(fox7));
+let phraseArray = parole(fox7);
+
+alert("Step 7 -you can find the word " +  parola + ' at the number ' + (phraseArray.indexOf(parola)+1) + ' position of the phrase' + '"' + fox7 + '"');
 
 //STEP 8 DONE
 // Create an application that stores the text “The quick brown fox jumps over the lazy dog” within a variable called old_string. 
